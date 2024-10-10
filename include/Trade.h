@@ -9,7 +9,10 @@ struct Trade{
     int best_bp;
     // bid volume.
     int bid_volume;
-    Trade(){
-        
-    }
+    Trade() = default;
+
+    Trade(int best_ap, int ask_volume, int best_bp, int bid_volume):
+     best_ap(best_ap), ask_volume(ask_volume), best_bp(best_bp), bid_volume(bid_volume){}
 };
+
+
