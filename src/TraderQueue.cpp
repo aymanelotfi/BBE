@@ -13,3 +13,11 @@ Trade TraderQueue::getTrade() {
     return trade;
 }
 
+bool TraderQueue::empty() const{
+  return trades.empty();
+}
+
+int TraderQueue::size() const {
+  return trades.size();
+}
+

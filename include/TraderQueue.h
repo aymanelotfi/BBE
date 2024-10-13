@@ -7,8 +7,8 @@ class TraderQueue {
 public:
     void addTrade(Trade trade);
     Trade getTrade();
-    bool isEmpty();
-    int size();
+    bool empty() const;
+    int size() const;
     void clear();
 private:
     std::queue<Trade> trades;

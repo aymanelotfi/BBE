@@ -9,8 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Include directories
 include_directories(include)
 
-# Source files
-set(SOURCES src/main.cpp)
+file(GLOB SOURCES "src/*.cpp")
+
 
 # Add executable
 add_executable(${PROJECT_NAME} ${SOURCES})
