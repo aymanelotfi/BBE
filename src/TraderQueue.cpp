@@ -1,7 +1,13 @@
 #include "TraderQueue.h"
 
+#include <mutex>
+
 void TraderQueue::addTrade(Trade trade) {
+    std::cout << "Adding trade" << std::endl;
+    std::unique_lock<std::mutex> lock(mtx);
     trades.push(trade);
+    lock.unlock();
+    cv.notify_all();
 }
 
 Trade TraderQueue::getTrade() {
@@ -13,11 +19,8 @@ Trade TraderQueue::getTrade() {
     return trade;
 }
 
-bool TraderQueue::empty() const{
-  return trades.empty();
+bool TraderQueue::empty() {
+    return trades.empty();
 }
 
-int TraderQueue::size() const {
-  return trades.size();
-}
 

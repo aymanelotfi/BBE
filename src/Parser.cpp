@@ -14,8 +14,7 @@ Parser::Parser(const std::string& filename): inFile(filename) {
 void Parser::load(TraderQueue& queue) {
     std::string line;
     while(std::getline(inFile, line)) {
-        // manage mutex and cv
-        queue.addTrade(Trade(line));
+            queue.addTrade(Trade(line));
     }
 }
 

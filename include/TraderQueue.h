@@ -5,12 +5,14 @@
 
 class TraderQueue {
 public:
+    std::mutex mtx;
+    std::condition_variable cv;
+
     void addTrade(Trade trade);
     Trade getTrade();
-    bool empty() const;
-    int size() const;
+    bool empty();
     void clear();
+
 private:
     std::queue<Trade> trades;
-    std::mutex mtx;
 };
