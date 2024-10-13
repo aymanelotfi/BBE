@@ -29,13 +29,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05984675-f553-4b6e-b948-31e46df5a300" name="Changes" comment="Add trade">
-      <change afterPath="$PROJECT_DIR$/src/Parser.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Trade.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Trade.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/TraderQueue.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/TraderQueue.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/parser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TraderQueue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TraderQueue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-c1be38651492d68456c2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-4fb18393b88107fcbdfe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-bf82c3cbd6626b66c31d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-_deps.googletest-build-Debug-ded26adebee9516e95c3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-_deps.googletest-build.googlemock-Debug-0075e207e08fd7c62e8e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-_deps.googletest-build.googletest-Debug-a0e678f7714ce45ee6b5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-10-13T16-03-25-0120.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-BBE-Debug-fc88ec9098ed20f53ce8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-gmock-Debug-6e71f1a07c81ccd13a1b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-gmock_main-Debug-b545b695802aec981c46.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-gtest-Debug-2ab7d371ba83c48c8189.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-gtest_main-Debug-c9dba6d0121794081505.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-unit_tests-Debug-514847e3f39e11960ad4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-f397d5dfd6f01732d294.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BBE.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_main.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_main.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/unit_tests.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/unit_tests[1]_include.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/unit_tests[1]_tests.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <list id="b7d5eb9d-7824-4c4d-af2b-9605ba20f834" name="Changes by medk" comment="" />
@@ -88,7 +114,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "ctest.advertisement.all.test.configuration.is.created": "true",
-    "git-widget-placeholder": "776ee555",
+    "git-widget-placeholder": "f5388f88",
     "last_opened_file_path": "C:/Users/Vikos/CLionProjects/BBE/CMakeLists.txt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -162,7 +188,7 @@
       <workItem from="1728576092434" duration="2378000" />
       <workItem from="1728590801391" duration="3555000" />
       <workItem from="1728636945463" duration="3005000" />
-      <workItem from="1728830424786" duration="4693000" />
+      <workItem from="1728830424786" duration="4884000" />
     </task>
     <task id="LOCAL-00001" summary="Add trade">
       <option name="closed" value="true" />
