@@ -7,5 +7,5 @@ int main() {
     while(!queue.empty()) {
         auto trade = queue.getTrade();
         trade.print();
-    }ad
+    }
 }
