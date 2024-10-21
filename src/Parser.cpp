@@ -16,6 +16,7 @@ void Parser::load(TraderQueue& queue) {
     while(std::getline(inFile, line)) {
             queue.addTrade(Trade(line));
     }
+    queue.finish();
 }
 
 

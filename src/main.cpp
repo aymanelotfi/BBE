@@ -2,14 +2,10 @@
 #include <iostream>
 
 void consume(TraderQueue& queue) {
-    while(true) {
-        std::unique_lock<std::mutex> lock(queue.mtx);
-        queue.cv.wait(lock, [&queue]() { return !queue.empty(); });
-        std::cout << "Consuming new trade :" << std::endl;
-        auto trade = queue.getTrade();
+    while(!queue.is_finished()) {
+        Trade trade = queue.getTrade();
         trade.print();
-        lock.unlock();
-    }
+    } 
 }
 int main() {
     TraderQueue queue;
