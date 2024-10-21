@@ -13,7 +13,8 @@ file(GLOB SOURCES "src/*.cpp")
 
 
 # Add executable
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES}
+        src/Exchange.cpp)
 
 # Google Test setup
 include(FetchContent)

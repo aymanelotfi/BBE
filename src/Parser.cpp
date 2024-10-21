@@ -5,13 +5,13 @@
 #include <fstream>
 #include <iostream>
 
-Parser::Parser(const std::string& filename): inFile(filename) {
+Parser::Parser(const Path& filename, TraderQueue& queue): inFile(filename), queue(queue) {
     if(!inFile.is_open()) {
         std::cerr << "Error opening file ! " <<std::endl;
     }
 }
 
-void Parser::load(TraderQueue& queue) {
+void Parser::load() {
     std::string line;
     while(std::getline(inFile, line)) {
             queue.addTrade(Trade(line));
