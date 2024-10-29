@@ -9,6 +9,7 @@
 
 #include <string>
 #include <fstream>
+#include "Trade.h"
 
 #include "TraderQueue.h"
 
@@ -18,14 +19,14 @@ class Exchange;
 
 class Parser{
 public:
-    explicit Parser(const Path& MD_filename, TraderQueue& queue);
+    explicit Parser(const Path& MD_filename, TraderQueue<Trade>& queue);
 
     void load();
 
     ~Parser();
 
 private:
-    TraderQueue& queue;
+    TraderQueue<Trade>& queue;
     std::ifstream inFile;
 };
 

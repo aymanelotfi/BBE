@@ -5,7 +5,7 @@
 #include <fstream>
 #include <iostream>
 
-Parser::Parser(const Path& filename, TraderQueue& queue): inFile(filename), queue(queue) {
+Parser::Parser(const Path& filename, TraderQueue<Trade>& queue): inFile(filename), queue(queue) {
     if(!inFile.is_open()) {
         std::cerr << "Error opening file ! " <<std::endl;
     }

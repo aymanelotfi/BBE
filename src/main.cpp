@@ -1,16 +1,15 @@
 #include "Parser.h"
 #include <iostream>
 
-void consume(TraderQueue& queue) {
+void consume(TraderQueue<Trade>& queue) {
     while(!queue.is_finished()) {
         Trade trade = queue.getTrade();
         trade.print();
     } 
 }
 int main() {
-    TraderQueue queue;
-    Parser("../src/test.csv").load(queue);
-    std::thread producer_thread ([&queue]() {Parser("../src/test.csv").load(queue);});
+    TraderQueue<Trade> queue;
+    std::thread producer_thread ([&queue]() {Parser("../src/test.csv",queue).load();});
 
     std::thread consumer_thread ([&queue]() {consume(queue);});
 

@@ -21,7 +21,7 @@ class Exchange{
 private:
     std::map<Ric, std::unique_ptr<OrderBook>> _order_books;
     std::unique_ptr<Parser> _md_feed_parser;
-    TraderQueue _md_feed_queue;
+    TraderQueue<Trade> _md_feed_queue;
 
     std::thread _stream_thread;
     std::thread _exchange_thread;
