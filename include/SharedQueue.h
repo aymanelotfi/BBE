@@ -14,7 +14,7 @@ private:
     bool finished = false;
 
 public:
-    void push(T item);
+    void push(const T& item);
 
     T pop();
 

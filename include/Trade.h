@@ -1,4 +1,6 @@
-#pragma once
+#ifndef TRADE_H
+#define TRADE_H
+
 #include<iostream>
 #include<sstream>
 #include<vector>
@@ -21,26 +23,6 @@ public:
     
     Trade(int timestamp, int best_ap, int best_av, int best_bp, int best_bv): timestamp(timestamp),
      best_ap(best_ap), best_av(best_av), best_bp(best_bp), best_bv(best_bv){}
-    
-    Trade(const std::string& line) {
-        std::stringstream ss(line);
-        std::string token;
-        std::vector<int> values;
-
-        while (std::getline(ss, token, ',')) {
-            values.push_back(std::stoi(token)); // Convert token to int
-        }
-
-        if (values.size() == 5) {
-            timestamp = values[0];
-            best_ap = values[1];
-            best_av = values[2];
-            best_bp = values[3];
-            best_bv = values[4];
-        } else {
-            std::cerr << "Error: Invalid CSV format." << std::endl;
-        }
-    }
 
     void print() const {
         std::cout << "Timestamp: " << timestamp << std::endl;
@@ -53,4 +35,4 @@ public:
 
 };
 
-
+#endif
