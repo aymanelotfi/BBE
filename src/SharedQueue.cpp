@@ -1,7 +1,7 @@
 #include "SharedQueue.h"
 
 template<typename T>
-void SharedQueue<T>::push(T item) {
+void SharedQueue<T>::push(const T& item) {
     std::unique_lock<std::mutex> lock(mtx);
     trades.push(item);
     lock.unlock();
