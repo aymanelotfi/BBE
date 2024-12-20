@@ -10,7 +10,7 @@
 #include <thread>
 
 #include "Parser.h"
-#include "TraderQueue.h"
+#include "SharedQueue.h"
 #include "Trade.h"
 #include "OrderBook.h"
 
@@ -21,13 +21,13 @@ class Exchange{
 private:
     std::map<Ric, std::unique_ptr<OrderBook>> _order_books;
     std::unique_ptr<Parser> _md_feed_parser;
-    TraderQueue<Trade> _md_feed_queue;
+    SharedQueue<Trade> _md_feed_queue;
 
     std::thread _stream_thread;
     std::thread _exchange_thread;
 
 public:
-    Exchange(const Path& MD_path);
+    explicit Exchange(const Path& MD_path);
 
     void startExchange();
 

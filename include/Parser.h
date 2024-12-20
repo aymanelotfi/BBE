@@ -7,26 +7,24 @@
 #ifndef BBE_PARSER_H
 #define BBE_PARSER_H
 
+#include "Trade.h"
+#include "SharedQueue.h"
+
 #include <string>
 #include <fstream>
-#include "Trade.h"
-
-#include "TraderQueue.h"
 
 using Path = std::string;
 
-class Exchange;
-
 class Parser{
 public:
-    explicit Parser(const Path& MD_filename, TraderQueue<Trade>& queue);
+    explicit Parser(const Path& MD_filename, SharedQueue<Trade>& queue);
 
     void load();
 
     ~Parser();
 
 private:
-    TraderQueue<Trade>& queue;
+    SharedQueue<Trade>& queue;
     std::ifstream inFile;
 };
 
