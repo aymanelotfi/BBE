@@ -19,7 +19,7 @@ class Parser{
 public:
     explicit Parser(const Path& MD_filename, SharedQueue<Trade>& queue);
 
-    void load();
+    void stream();
 
     ~Parser();
 

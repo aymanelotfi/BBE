@@ -8,7 +8,7 @@ Parser::Parser(const Path& filename, SharedQueue<Trade>& queue): inFile(filename
     }
 }
 
-void Parser::load() {
+void Parser::stream() {
     std::string line;
     while(std::getline(inFile, line)) {
         std::stringstream ss(line);

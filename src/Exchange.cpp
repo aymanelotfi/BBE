@@ -3,7 +3,7 @@
 Exchange::Exchange(const Path &MD_path) : _md_feed_queue(), _md_feed_parser(std::make_unique<Parser>(MD_path, _md_feed_queue)){}
 
 void Exchange::startExchange() {
-    _stream_thread = std::thread(&Parser::load, _md_feed_parser.get());
+    _stream_thread = std::thread(&Parser::stream, _md_feed_parser.get());
     _exchange_thread = std::thread(&Exchange::runExchange, this);
 }
 
