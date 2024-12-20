@@ -6,7 +6,7 @@
 #include<vector>
 
 
-class Trade{
+struct Trade{
     int timestamp;
     // best ask price.
     int best_ap;
@@ -17,9 +17,7 @@ class Trade{
     // volume of the bid.
     int best_bv;
 
-public:
     Trade() = default;
-
     
     Trade(int timestamp, int best_ap, int best_av, int best_bp, int best_bv): timestamp(timestamp),
      best_ap(best_ap), best_av(best_av), best_bp(best_bp), best_bv(best_bv){}
@@ -31,8 +29,6 @@ public:
         std::cout << "Best Bid Price: " << best_bp << std::endl;
         std::cout << "Bid Volume: " << best_av << std::endl;
     }
-
-
 };
 
 #endif
