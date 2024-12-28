@@ -14,12 +14,9 @@
 #include "Trade.h"
 #include "OrderBook.h"
 
-using Ric = std::string;
-using Path = std::string;
-
 class Exchange{
 private:
-    std::map<Ric, std::unique_ptr<OrderBook>> _order_books;
+    std::map<std::string, std::unique_ptr<OrderBook>> _order_books; 
     std::unique_ptr<Parser> _md_feed_parser;
     SharedQueue<Trade> _md_feed_queue;
 
@@ -27,7 +24,7 @@ private:
     std::thread _exchange_thread;
 
 public:
-    explicit Exchange(const Path& MD_path);
+    explicit Exchange(const std::string& MD_path);
 
     void startExchange();
 

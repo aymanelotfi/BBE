@@ -14,7 +14,10 @@ file(GLOB SOURCES "src/*.cpp")
 
 # Add executable
 add_executable(${PROJECT_NAME} ${SOURCES}
-        src/Exchange.cpp)
+        src/Exchange.cpp
+        src/Parser.cpp
+        src/SharedQueue.cpp
+)
 
 # Google Test setup
 include(FetchContent)

@@ -1,8 +1,9 @@
 #include "Parser.h"
 #include <fstream>
 #include <iostream>
+#include <optional>
 
-Parser::Parser(const Path& filename, SharedQueue<Trade>& queue): inFile(filename), queue(queue) {
+Parser::Parser(const std::string& filename, SharedQueue<Trade>& queue): inFile(filename), queue(queue) {
     if(!inFile.is_open()) {
         std::cerr << "Error opening file ! " << std::endl;
     }
@@ -10,25 +11,47 @@ Parser::Parser(const Path& filename, SharedQueue<Trade>& queue): inFile(filename
 
 void Parser::stream() {
     std::string line;
+    size_t line_number = 0;
     while(std::getline(inFile, line)) {
-        std::stringstream ss(line);
-        std::string token;
-        std::vector<int> values;
-
-        while (std::getline(ss, token, ',')) {
-            values.push_back(std::stoi(token)); // Convert token to int
-        }
-
-        if (values.size() == 5) {
-            Trade trade(values[0], values[1], values[2], values[3], values[4]);
+        line_number++;
+        try{
+            Trade trade = parse_line(line);
             queue.push(trade);
-        } else {
-            std::cerr << "Error: Invalid CSV format." << std::endl;
+        } catch(const std::exception& e){
+            std::cerr << "Error while parsing line " << line_number << ": " << e.what() << '\n';
         }
     }
     queue.finish();
 }
 
+std::optional<Side> Parser::parse_side(const std::string& str){
+    if(str == "BID"){
+        return Side::BID;
+    }
+    else if(str == "SELL"){
+        return Side::SELL;
+    }
+    else return std::nullopt;
+}
+
+Trade Parser::parse_line(const std::string& line){
+    std::istringstream ss(line);
+    std::string tokens[5];
+    for(int i = 0; i < 5;i++){
+        getline(ss, tokens[i], ',');
+    }
+
+    uint64_t ts = std::stoull(tokens[1]);
+    float price = std::stof(tokens[2]);
+    uint32_t volume = std::stoul(tokens[3]);
+    auto side = parse_side(tokens[4]);
+
+    if(!side){
+        throw std::runtime_error("[Parser] Invalid Side");
+    }
+
+    return Trade{tokens[0], ts, price, volume, *side};
+}
 
 Parser::~Parser() {
     inFile.close();

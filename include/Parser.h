@@ -13,17 +13,19 @@
 #include <string>
 #include <fstream>
 
-using Path = std::string;
-
 class Parser{
 public:
-    explicit Parser(const Path& MD_filename, SharedQueue<Trade>& queue);
+    explicit Parser(const std::string& MD_filename, SharedQueue<Trade>& queue);
 
     void stream();
 
     ~Parser();
 
 private:
+    std::optional<Side> parse_side(const std::string& str);
+    
+    Trade parse_line(const std::string& line);
+
     SharedQueue<Trade>& queue;
     std::ifstream inFile;
 };
